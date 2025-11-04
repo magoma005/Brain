@@ -14,7 +14,7 @@ function checkPIN() {
   const userPIN = pinInput.value.trim();
 
   if (userPIN === correctPIN) {
-    // Animación de entrada a "Mi Mundo"
+    // Animación breve antes de entrar
     document.body.innerHTML = `
       <div class="welcome">
         <h1>Bienvenido a <span>Mi Mundo</span></h1>
@@ -27,9 +27,9 @@ function checkPIN() {
     document.body.style.alignItems = "center";
     document.body.style.justifyContent = "center";
 
+    // Esperar 2 segundos y redirigir
     setTimeout(() => {
-      // Aquí más adelante cargaremos el menú principal
-      document.body.innerHTML += `<p style="opacity:0.7;">(Menú próximamente...)</p>`;
+      window.location.href = "menu.html";
     }, 2000);
   } else {
     errorMsg.textContent = "PIN incorrecto. Intenta de nuevo.";

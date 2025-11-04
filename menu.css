@@ -1,0 +1,131 @@
+/* Importar fuente futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: url("img/pass.gif") no-repeat center center fixed;
+  background-size: cover;
+  color: #00ffff;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(1.02); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---- NAVBAR ---- */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid rgba(0, 255, 255, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+  animation: neonPulse 3s infinite alternate;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  color: #00ffff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.navbar li a::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background: #00ffff;
+  transition: width 0.3s ease;
+}
+
+.navbar li a:hover::after {
+  width: 100%;
+}
+
+.navbar li a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #00ffff, 0 0 16px #00ffff;
+}
+
+/* ---- TEXTO CENTRAL ---- */
+.main-text {
+  text-align: center;
+  margin-top: 12vh;
+  animation: floatText 6s ease-in-out infinite;
+}
+
+.main-text h1 {
+  font-size: 3rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 25px #00ffff;
+  margin-bottom: 0.5rem;
+}
+
+.main-text p {
+  font-size: 1.2rem;
+  color: #b8f7ff;
+  letter-spacing: 2px;
+}
+
+/* Animación de flotación del texto */
+@keyframes floatText {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ---- SECCIÓN CANCIONES ---- */
+#songs-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  border-top: 2px solid rgba(0, 255, 255, 0.3);
+  box-shadow: 0 -10px 30px rgba(0, 255, 255, 0.1);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#songs-section h2 {
+  margin-bottom: 1rem;
+  color: #00ffff;
+  text-shadow: 0 0 15px #00ffff;
+}
+
+#songs-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.song-card {
+  background: rgba(0, 255, 255, 0.08);
+  borde
