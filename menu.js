@@ -1,25 +1,55 @@
-const client_id = '17789fda6c7d4b88bcdce6b056f6148f';
-const redirect_uri = "http://127.0.0.1:3000/menu.html";// coincide con lo que registraste
-const scopes = 'user-top-read user-library-read'; // permisos que quieres
-
-// Generar URL para autorizar
-function getSpotifyAuthUrl() {
-  const authEndpoint = 'https://accounts.spotify.com/authorize';
-  const params = new URLSearchParams({
-    response_type: 'code',
-    client_id: client_id,
-    scope: scopes,
-    redirect_uri: redirect_uri,
-    show_dialog: 'true'
-  });
-  return `${authEndpoint}?${params.toString()}`;
-}
-
+// Al hacer clic en el botón de login, se redirige al backend que maneja la autenticación
 document.getElementById('loginSpotifyBtn').addEventListener('click', () => {
-  window.location.href = getSpotifyAuthUrl();
+  console.log("Redirigiendo al login de Spotify...");
+  window.location.href = '/login';
 });
 
-// Después de autorizar, en la ruta callback necesitas captar el "code" que Spotify retorna.
-// Aquí necesitarás un pequeño backend para intercambiar el code por un access_token.
-// Luego usarás fetch para: GET https://api.spotify.com/v1/me/top/tracks?limit=3
-// con header Authorization: Bearer ACCESS_TOKEN
+// Cuando el usuario vuelve del callback, intentamos mostrar sus 3 canciones más escuchadas
+window.addEventListener('DOMContentLoaded', async () => {
+  const params = new URLSearchParams(window.location.search);
+  const accessToken = params.get('access_token');
+  const songsContainer = document.getElementById('songs-container');
+
+  if (!songsContainer) {
+    console.error("❌ No se encontró el contenedor de canciones en el HTML.");
+    return;
+  }
+
+  if (accessToken) {
+    console.log("✅ Access token recibido:", accessToken.substring(0, 25) + "...");
+
+    try {
+      const response = await fetch('https://api.spotify.com/v1/me/top/tracks?limit=3', {
+        headers: { Authorization: `Bearer ${accessToken}` }
+      });
+
+      // Si la respuesta no es OK, mostramos el código del error
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("❌ Error de Spotify API:", response.status, errorText);
+        songsContainer.innerHTML = `<p>Error al conectar con Spotify (${response.status}). Revisa la consola.</p>`;
+        return;
+      }
+
+      const data = await response.json();
+      console.log("🎵 Datos recibidos de Spotify:", data);
+
+      if (data.items && data.items.length > 0) {
+        songsContainer.innerHTML = data.items.map(track => `
+          <div class="song">
+            <img src="${track.album.images[0]?.url || ''}" alt="${track.name}">
+            <p><b>${track.name}</b><br>${track.artists.map(a => a.name).join(', ')}</p>
+          </div>
+        `).join('');
+      } else {
+        songsContainer.innerHTML = "<p>No se encontraron canciones en tu cuenta.</p>";
+      }
+
+    } catch (err) {
+      console.error("💥 Error al obtener canciones:", err);
+      songsContainer.innerHTML = `<p>Error al obtener tus canciones: ${err.message}</p>`;
+    }
+  } else {
+    console.warn("⚠️ No se encontró el access_token en la URL.");
+  }
+});

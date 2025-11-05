@@ -128,4 +128,61 @@ body {
 
 .song-card {
   background: rgba(0, 255, 255, 0.08);
-  borde
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 200px;
+  transition: 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+.song-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+.song-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.song-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #00ffff;
+}
+
+.song-card p {
+  font-size: 0.9rem;
+  color: #b8f7ff;
+}
+
+/* ---- BOTÓN SPOTIFY ---- */
+#loginSpotifyBtn {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  border: none;
+  color: black;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  margin-top: 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+#loginSpotifyBtn:hover {
+  background: linear-gradient(90deg, #00ffcc, #00ffff);
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00ffff;
+}
+
+/* ---- EFECTOS EXTRA ---- */
+@keyframes neonPulse {
+  from {
+    box-shadow: 0 0 10px rgba(0,255,255,0.3), 0 0 20px rgba(0,255,255,0.2);
+  }
+  to {
+    box-shadow: 0 0 25px rgba(0,255,255,0.6), 0 0 50px rgba(0,255,255,0.3);
+  }
+}
