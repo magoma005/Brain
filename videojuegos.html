@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Mundo – Videojuegos</title>
+  <link rel="stylesheet" href="videojuegos.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="menu.html">Inicio</a></li>
+      <li><a href="#">Cómics</a></li>
+      <li><a href="#">Películas</a></li>
+      <li><a href="#" class="active">Videojuegos</a></li>
+      <li><a href="#">Libros</a></li>
+      <li><a href="#">Imágenes</a></li>
+    </ul>
+  </nav>
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <h1>🎮 Videojuegos</h1>
+    <p>Explora los títulos que forman parte de Mi Mundo</p>
+  </header>
+
+  <!-- BARRA DE BÚSQUEDA Y FILTROS -->
+  <section class="tools">
+    <input type="text" id="searchInput" placeholder="Buscar videojuego... 🔍">
+    <button id="filterBtn">⚙️ Filtros</button>
+  </section>
+
+  <!-- PANEL DE FILTROS -->
+  <aside id="filterPanel" class="hidden">
+    <h3>Filtrar por:</h3>
+    <label>Consola:</label>
+    <select id="filterConsole">
+      <option value="">Todas</option>
+      <option value="PlayStation">PlayStation</option>
+      <option value="PlayStation 2">PlayStation 2</option> 
+      <option value="PlayStation 3">PlayStation 3</option> 
+      <option value="PlayStation 4">PlayStation 4</option>
+      <option value="PlayStation 5">PlayStation 5</option> 
+      <option value="PSP">PSP</option>                 
+      <option value="Xbox">Xbox</option>
+      <option value="Xbox 360">Xbox 360</option>
+      <option value="Xbox One">Xbox One</option>
+      <option value="Xbox Series">Xbox Series</option>
+      <option value="Nintendo Switch">Nintendo Switch</option>
+      <option value="Nintendo Switch 2">Nintendo Switch 2</option>
+      <option value="Nintendo DS">Nintendo DS</option>
+      <option value="Nintendo 3DS">Nintendo 3DS</option>
+      <option value="Nintendo Wii">Nintendo Wii</option>
+      <option value="Wii U">Wii U</option>
+      <option value="PC">PC</option>
+      <option value="Android">Android</option>
+      <option value="Iphone">Iphone</option>
+      <option value="Sega Mega Drive">Sega Mega Drive</option>
+      <option value="SNES">Super Nintendo</option>
+    </select>
+
+    <label>Género:</label>
+    <select id="filterGenre">
+      <option value="">Todos</option>
+      <option value="Acción">Acción</option>
+      <option value="Aventura">Aventura</option>
+      <option value="RPG">RPG</option>
+      <option value="Terror">Terror</option>
+      <option value="Survival Horror">Survival Horror</option>      
+      <option value="Carreras">Carreras</option>
+      <option value="Simulacion">Simulacion</option>
+    </select>
+
+    <label>Desarrolladora:</label>
+    <input type="text" id="filterDeveloper" placeholder="Ej: Capcom, Rockstar...">
+
+    <button id="applyFilters">Aplicar filtros</button>
+  </aside>
+
+  <!-- SECCIÓN DE VIDEOJUEGOS -->
+  <main id="gamesContainer">
+    <!-- Ejemplos de tarjetas -->
+    <div class="game-card" data-console="PlayStation 2, PlayStation 3, Xbox 360, Wii, Nintendo DS, PC, PSP" data-genre="Acción-Aventura, Hack & Slash, Plataformas" data-dev="WayForward Technologies">
+      <img src="img/games/adventuretime.png" alt="AT">
+      <h3>Adventure Time: The VideoGame</h3>
+      <p>PlayStation 2, PlayStation 3, Xbox 360, Wii, Nintendo DS, PC, PSP</p>
+    </div>
+
+    <div class="game-card" data-console="Playstation 5, Xbox Series, Nintendo Switch 2, PC, Android y Iphone" data-genre="Carreras" data-dev="Devolver Digital">
+      <img src="img/games/turbotime.png" alt="Turbo Time">
+      <h3>Adventure Time: Turbo Time</h3>
+      <p> Playstation 5, Xbox Series, Nintendo Switch 2, PC, Android y Iphone</p>
+    </div>
+
+    <div class="game-card" data-console="Playstation 4, Xbox One, PC, Playstation 3, Xbox 360, Wii U" data-genre="Accion" data-dev="Rocksteady">
+      <img src="img/games/batsup.png" alt="BatVSup">
+      <h3>BATMAN V SUPERMAN: THE VIDEOGAME</h3>
+      <p>Playstation 4, Xbox One, PC, Playstation 3, Xbox 360, Wii U</p>
+    </div>
+
+    <div class="game-card" data-console="SNES y Sega Mega Drive" data-genre="Terror" data-dev="Konami">
+      <img src="img/games/chucky.png" alt="chucky">
+      <h3>Chucky: The Video Game</h3>
+      <p>SNES y Sega Mega Drive</p>
+    </div>
+
+        <div class="game-card" data-console="PlayStation 2, Xbox, Nintendo GameCube" data-genre="Survival Horror Narrativo" data-dev="Surreal Software">
+      <img src="img/games/final.png" alt="final">
+      <h3>Final Destination: The Video Game</h3>
+      <p>PlayStation 2, Xbox, Nintendo GameCube</p>
+    </div>
+
+            <div class="game-card" data-console="Nintendo Wii" data-genre="Survival Horror" data-dev="Scott Cawthon">
+      <img src="img/games/fnafwii.png" alt="fnaf">
+      <h3>Five Nights at Freddy's: Wii Nightmare Edition</h3>
+      <p>Nintendo Wii</p>
+    </div>
+
+      <div class="game-card" data-console="Nintendo Wii" data-genre="Survival Horror" data-dev="Scott Cawthon">
+      <img src="img/games/fnaf2wii.png" alt="fnaf2">
+      <h3>FIVE NIGHTS AT FREDDY’S 2: Wii Chaos Edition</h3>
+      <p>Nintendo Wii</p>
+    </div>
+
+        <div class="game-card" data-console="PlayStation 2" data-genre="Hack and Slash" data-dev="Santa Monica Studio">
+      <img src="img/games/godclaus.png" alt="godclaus">
+      <h3>God of War: Christmas Edition</h3>
+      <p>PlayStation 2</p>
+    </div> 
+    
+     <div class="game-card" data-console="PlayStation 2, PlayStation 3, Xbox 360" data-genre="Accion" data-dev="Rockstar North">
+      <img src="img/games/gtacolombia.png" alt="gtacolombia">
+      <h3>Grand Theft Auto: Colombian Chronicles</h3>
+      <p>PlayStation 2, PlayStation 3, Xbox 360, PSP, Nintendo 3DS, Android, Iphone</p>  
+          </div> 
+      
+     <div class="game-card" data-console="PlayStation 3, PlayStation 4, Xbox 360, Xbox One, Wii U, Nintendo 3DS, PS Vita" data-genre="Accion" data-dev="Rockstar North">
+      <img src="img/games/sanandreas2.png" alt="sanandreas2">
+      <h3>Grand Theft Auto: San Andreas 2</h3>
+      <p>PlayStation 3, PlayStation 4, Xbox 360, Xbox One, Wii U, Nintendo 3DS, PS Vita</p>   
+          </div>   
+    <div class="game-card" data-console="PlayStation 3, Xbox 360, Wii U, PSP y Nintendo 3DS" data-genre="Accion" data-dev="SEGA Studios USA">
+      <img src="img/games/ironman3.png" alt="ironman3">
+      <h3>IRON MAN 3: THE VIDEO GAME</h3>
+      <p>PlayStation 3, Xbox 360, Wii U, PSP y Nintendo 3DS</p>   
+          </div>          
+     <div class="game-card" data-console="Xbox 360, Playstation 3, PC, Nintendo 3DS" data-genre="Accion" data-dev="Volition Inc."">
+      <img src="img/games/kfc.png" alt="kfc">
+      <h3> KFC: EMPLOYER – THE COLONEL’S LAST STAND</h3>
+      <p>Xbox 360, Playstation 3, PC, Nintendo 3DS</p>   
+          </div>      
+   <div class="game-card" data-console="Playstation 3, Playstation 2, Xbox 360, Wii, Nintendo DS, PSP" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legomac.jpg" alt="legomac">
+      <h3>LEGO McDonald's</h3>
+      <p>Playstation 3, Playstation 2, Xbox 360, Wii, Nintendo DS, PSP</p>   
+          </div> 
+          </div>      
+   <div class="game-card" data-console="Playstation 3, Playstation 4, Xbox 360, Xbox One, Wii U, Nintendo 3DS, PC, Android, Iphone<" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legoat.png" alt="legoat">
+      <h3>LEGO: Adventure Time</h3>
+      <p>Playstation 3, Playstation 4, Xbox 360, Xbox One, Wii U, Nintendo 3DS, PC, Android, Iphone</p>   
+          </div>  
+    <div class="game-card" data-console="Playstation 2, Playstation 3, Xbox 360, Wii, PSP, Nintendo DS, PC<" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legospider.png" alt="legospider">
+      <h3>LEGO Spider-Man</h3>
+      <p>Playstation 2, Playstation 3, Xbox 360, Wii, PSP, Nintendo DS, PC</p>   
+          </div>   
+    <div class="game-card" data-console="Playstation 4, Playstation 5, Xbox One, Xbox Series, Nintendo Switch, PC, Android, Iphone<" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legotyler.png" alt="legotyler">
+      <h3>LEGO: Call Me If You Brick Me</h3>
+      <p>Playstation 4, Playstation 5, Xbox One, Xbox Series, Nintendo Switch, PC, Android, Iphone</p>   
+          </div>    
+      <div class="game-card" data-console="Playstation 2, GameCube, Xbox, PC<" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legoem.png" alt="legoem">
+      <h3>LEGO: EMINEM</h3>
+      <p>Playstation 2, GameCube, Xbox, PC</p>   
+          </div>  
+          </div>    
+      <div class="game-card" data-console="Playstation 3, Xbox 360, Wii, PC<" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legokfc.png" alt="legokfc">
+      <h3>LEGO: KFC</h3>
+      <p>Playstation 3, Xbox 360, Wii, PC</p>   
+          </div>    
+          </div>    
+      <div class="game-card" data-console="Playstation 5, Xbox Series, Nintendo Switch 2, PC<" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legomk.png" alt="legomk">
+      <h3>LEGO: Mortal Kombat</h3>
+      <p>Playstation 5, Xbox Series, Nintendo Switch 2, PC</p>   
+          </div>                                    
+          </div>    
+      <div class="game-card" data-console="Playstation 3, Xbox 360, Playstation 2, PSP, Nintendo DS, Nintendo 3DS, Android, Iphone<" data-genre="Aventura" data-dev="Traveller’s Tales"">
+      <img src="img/games/legonaruto.png" alt="legonaruto">
+      <h3>LEGO: NARUTO</h3>
+      <p>Playstation 3, Xbox 360, Playstation 2, PSP, Nintendo DS, Nintendo 3DS, Android, Iphone</p>   
+          </div>   
+          </div>    
+      <div class="game-card" data-console="Playstation 2, Xbox, Gamecube, PSP, Nintendo DS, Wii, Playstation 3, Xbox 360<" data-genre="Accion" data-dev="Traveller’s Tales"">
+      <img src="img/games/legore.png" alt="legore">
+      <h3>LEGO: Resident Evil</h3>
+      <p>Playstation 2, Xbox, Gamecube, PSP, Nintendo DS, Wii, Playstation 3, Xbox 360</p>   
+          </div>      
+          </div>    
+      <div class="game-card" data-console="Playstation 3, Playstation 4, Xbox 360, Xbox One, Wii U, Nintendo 3DS, PS Vita, PC, Android, Iphone<" data-genre="Accion" data-dev="Traveller’s Tales"">
+      <img src="img/games/legosaw.png" alt="legosaw">
+      <h3>LEGO: SAW</h3>
+      <p>Playstation 3, Playstation 4, Xbox 360, Xbox One, Wii U, Nintendo 3DS, PS Vita, PC, Android, Iphone</p>   
+          </div>            
+         </div>    
+      <div class="game-card" data-console="Playstation 2, Playstation 3, Xbox 360, Nintendo Wii, GameCube, PSP, Nintendo DS<" data-genre="Accion" data-dev="Traveller’s Tales"">
+      <img src="img/games/legosups.png" alt="legosups">
+      <h3>LEGO: Superman The VideoGame</h3>
+      <p>Playstation 2, Playstation 3, Xbox 360, Nintendo Wii, GameCube, PSP, Nintendo DS</p>   
+          </div>    
+         </div>    
+      <div class="game-card" data-console="Playstation 2, Playstation 3, Xbox 360, Nintendo Wii, GameBoy Advance, PSP, Nintendo DS<" data-genre="Accion" data-dev="Traveller’s Tales"">
+      <img src="img/games/legokanye.png" alt="legokanye">
+      <h3>LEGO: The College Dropout</h3>
+      <p>Playstation 2, Playstation 3, Xbox 360, Nintendo Wii, GameBoy Advance, PSP, Nintendo DS</p>   
+          </div>  
+         </div>    
+      <div class="game-card" data-console="Playstation 3, Xbox 360, Nintendo Wii, Nintendo DS, PSP, Android, Iphone<" data-genre="Accion" data-dev="Traveller’s Tales"">
+      <img src="img/games/legooffice.png" alt="legooffice">
+      <h3>LEGO: The Office</h3>
+      <p>Playstation 3, Xbox 360, Nintendo Wii, Nintendo DS, PSP, Android, Iphone</p>   
+          </div>   
+         </div>    
+      <div class="game-card" data-console="Playstation 3, Playstation 2, Xbox 360, Nintendo Wii, Nintendo DS, PC<" data-genre="Accion" data-dev="Traveller’s Tales"">
+      <img src="img/games/legosimp.png" alt="legosimp">
+      <h3>LEGO: The Simpsons</h3>
+      <p>Playstation 3, Playstation 2, Xbox 360, Nintendo Wii, Nintendo DS, PC</p>   
+          </div>         
+         </div>    
+      <div class="game-card" data-console="Playstation 3, Wii U, Xbox 360, Nintendo 3DS, PC<" data-genre="Accion" data-dev="Traveller’s Tales"">
+      <img src="img/games/legoye.png" alt="legoye">
+      <h3>LEGO: YEEZUS</h3>
+      <p>Playstation 3, Wii U, Xbox 360, Nintendo 3DS, PC</p>   
+          </div>  
+         </div>    
+      <div class="game-card" data-console="Playstation 4, Playstation 5, Xbox One, Xbox Series, PC<" data-genre="Accion" data-dev="Insomniac Games"">
+      <img src="img/games/loki.png" alt="loki">
+      <h3>LOKI: THE VIDEOGAME</h3>
+      <p>Playstation 4, Playstation 5, Xbox One, Xbox Series, PC</p>   
+          </div>    
+         </div>    
+      <div class="game-card" data-console="Playstation 3, Wii U, Xbox 360, Nintendo 3DS, PC, Android, Iphone<" data-genre="Accion" data-dev="Rocksteady"">
+      <img src="img/games/steel.png" alt="steel">
+      <h3>MAN OF STEEL: THE VIDEOGAME</h3>
+      <p>Playstation 3, Wii U, Xbox 360, Nintendo 3DS, PC, Android, Iphone</p>   
+          </div>    
+        </div>    
+      <div class="game-card" data-console="Wii U, Nintendo Wii<" data-genre="Carreras" data-dev="Nintendo"">
+      <img src="img/games/mkw2.png" alt="mkw2">
+      <h3>Mario Kart Wii 2</h3>
+      <p>Wii U, Nintendo Wii</p>   
+          </div>    
+        </div>    
+      <div class="game-card" data-console="PlayStation 2, Xbox, GameCube, Game Boy Advance<" data-genre="Simulacion" data-dev="Blitz Games"">
+      <img src="img/games/mc.png" alt="mc">
+      <h3>McDonald’s Employer</h3>
+      <p>PlayStation 2, Xbox, GameCube, Game Boy Advance</p>   
+          </div>  
+        </div>    
+      <div class="game-card" data-console="PlayStation 4, Playstation 5, Xbox Series, PC, Android, iPhone<" data-genre="Accion" data-dev="Sega"">
+      <img src="img/games/moon.png" alt="moon">
+      <h3>MOON KNIGHT: THE VIDEOGAME</h3>
+      <p>PlayStation 4, Playstation 5, Xbox Series, PC, Android, iPhone</p>   
+          </div>     
+        </div>    
+      <div class="game-card" data-console="PlayStation 2, PlayStation 3, Xbox 360, Wii, PSP, Nintendo DS<" data-genre="Accion" data-dev="D3 Publisher"">
+      <img src="img/games/regular.png" alt="regular">
+      <h3>Regular Show: With Mordecai and Rigby</h3>
+      <p>PlayStation 2, PlayStation 3, Xbox 360, Wii, PSP, Nintendo DS</p>   
+          </div>   
+        </div>    
+      <div class="game-card" data-console="SNES<" data-genre="Horror" data-dev="Rare"">
+      <img src="img/games/residentsnes.png" alt="residentsnes">
+      <h3>Resident Evil</h3>
+      <p>SNES</p>   
+      </div> 
+        </div>    
+      <div class="game-card" data-console="PlayStation 2, Nintendo GameCube, Xbox, Game Boy Advance<" data-genre="Accion" data-dev="Sonic Team"">
+      <img src="img/games/sonic3.png" alt="regular">
+      <h3>SONIC ADVENTURE 3</h3>
+      <p>PlayStation 2, Nintendo GameCube, Xbox, Game Boy Advance</p>   
+      </div>   
+        </div>    
+      <div class="game-card" data-console="Wii U, Wii, Nintendo 3DS<" data-genre="Aventura" data-dev="Nintendo"">
+      <img src="img/games/galaxy3.png" alt="regular">
+      <h3>Super Mario Galaxy 3</h3>
+      <p>Wii U, Wii, Nintendo 3DS</p>   
+      </div>   
+        </div>    
+      <div class="game-card" data-console="Wii<" data-genre="Aventura" data-dev="Nintendo"">
+      <img src="img/games/sunshine2.png" alt="regular">
+      <h3>Super Mario Sunshine 2</h3>
+      <p>Wii</p>   
+      </div>
+        </div>    
+      <div class="game-card" data-console="PlayStation 4, PlayStation 5, Xbox One, Xbox Series, Nintendo Switch, PC<" data-genre="Accion" data-dev="Rocksteady">
+      <img src="img/games/thebat.png" alt="regular">
+      <h3>The Batman: The VideoGame</h3>
+      <p>PlayStation 4, PlayStation 5, Xbox One, Xbox Series, Nintendo Switch, PC</p>   
+      </div>   
+        </div>    
+      <div class="game-card" data-console="PlayStation 2, PlayStation 3, Xbox, Xbox 360, Wii , Nintendo DS, y PSP<" data-genre="Aventura" data-dev="Thq">
+      <img src="img/games/theoffice.png" alt="regular">
+      <h3>The Office: The VideoGame</h3>
+      <p>PlayStation 2, PlayStation 3, Xbox, Xbox 360, Wii , Nintendo DS, y PSP</p>   
+      </div>  
+        </div>    
+      <div class="game-card" data-console="PlayStation 3, PlayStation 4, Xbox One, Xbox 360, Wii U, Nintendo 3DS, PS Vita, Android, Iphone, PC<" data-genre="Aventura" data-dev="Visceral Games">
+      <img src="img/games/simp2.png" alt="regular">
+      <h3>THE SIMPSONS GAME 2: Springfield Rebooted</h3>
+      <p>PlayStation 3, PlayStation 4, Xbox One, Xbox 360, Wii U, Nintendo 3DS, PS Vita, Android, Iphone, PC</p>   
+      </div>  
+        </div>    
+      <div class="game-card" data-console="PlayStation 2, PlayStation 3, Xbox, Xbox 360, Wii, GameCube, PSP, Nintendo DS, PC<" data-genre="Aventura" data-dev="Electronic Arts">
+      <img src="img/games/simpmovie.png" alt="regular">
+      <h3>The Simpsons Movie: The Video Game</h3>
+      <p>PlayStation 2, PlayStation 3, Xbox, Xbox 360, Wii, GameCube, PSP, Nintendo DS, PC</p>   
+      </div>      
+        </div>    
+      <div class="game-card" data-console="PlayStation 3, Wii, Nintendo 3DS, Xbox 360, Wii U, PS VITA, PC<" data-genre="Aventura" data-dev="SEGA">
+      <img src="img/games/thor2.png" alt="regular">
+      <h3>THOR: THE DARK WORLD – THE VIDEOGAME</h3>
+      <p>PlayStation 3, Wii, Nintendo 3DS, Xbox 360, Wii U, PS VITA, PC</p>   
+      </div>   
+        </div>    
+      <div class="game-card" data-console="PlayStation 5, PlayStation 4, Xbox Series, Xbox One, Nintendo Switch, PC<" data-genre="Aventura" data-dev="SEGA">
+      <img src="img/games/thor2re.png" alt="regular">
+      <h3>Thor: The Dark World – Remake</h3>
+      <p>PlayStation 5, PlayStation 4, Xbox Series, Xbox One, Nintendo Switch, PC</p>   
+      </div>   
+        </div>    
+      <div class="game-card" data-console="PlayStation 4, Xbox One, Nintendo Switch, PC, PlayStation 5<" data-genre="Aventura" data-dev="SEGA">
+      <img src="img/games/thorrag.png" alt="regular">
+      <h3>THOR: RAGNAROK – THE VIDEOGAME</h3>
+      <p>PlayStation 4, Xbox One, Nintendo Switch, PC, PlayStation 5</p>   
+      </div>    
+        </div>    
+      <div class="game-card" data-console="PlayStation 2, Xbox, Nintendo GameCube, Game Boy Advance<" data-genre="Aventura" data-dev="Radical Entertainment">
+      <img src="img/games/simphorror.png" alt="regular">
+      <h3>The Simpsons: Treehouse of Horror</h3>
+      <p>PlayStation 2, Xbox, Nintendo GameCube, Game Boy Advance</p>   
+      </div>     
+        </div>    
+      <div class="game-card" data-console="PlayStation 5, PlayStation 4, Xbox Series, Xbox One, PC, Nintendo Switch<" data-genre="Hack n’ Slash" data-dev="PlatinumGames">
+      <img src="img/games/th4.png" alt="regular">
+      <h3>Thor: The God of Thunder and Love</h3>
+      <p>PlayStation 5, PlayStation 4, Xbox Series, Xbox One, PC, Nintendo Switch</p>   
+      </div> 
+        </div>    
+      <div class="game-card" data-console="PlayStation 4, PlayStation 3, Xbox 360, Xbox One, PC, Nintendo Switch, Nintendo 3DS, Android, Iphone<" data-genre="Hack n’ Slash" data-dev="Rocksteady Studios">
+      <img src="img/games/ww.png" alt="regular">
+      <h3>Wonder Woman: The VideoGame</h3>
+      <p>PlayStation 4, PlayStation 3, Xbox 360, Xbox One, PC, Nintendo Switch, Nintendo 3DS, Android, Iphone</p>   
+      </div>     
+        </div>    
+      <div class="game-card" data-console="PlayStation 3, Xbox 360, PC<" data-genre="Accion" data-dev="PlatinumGames">
+      <img src="img/games/ye.png" alt="regular">
+      <h3>YEEZUS</h3>
+      <p>PlayStation 3, Xbox 360, PC</p>   
+      </div>     
+        </div>    
+      <div class="game-card" data-console="PlayStation 5, Xbox Series, PC<" data-genre="Accion" data-dev="Rocksteady">
+      <img src="img/games/aqua.png" alt="regular">
+      <h3>Aquaman: Harpoon of the Deep</h3>
+      <p>PlayStation 5, Xbox Series, PC</p>   
+      </div>       
+        </div>    
+      <div class="game-card" data-console="PlayStation 5, Xbox Series, PC<" data-genre="Accion" data-dev="Rocksteady">
+      <img src="img/games/beyond.png" alt="regular">
+      <h3>Batman Beyond: Neo-Gotham Rising</h3>
+      <p>PlayStation 5, Xbox Series, PC</p>   
+      </div>                                                 
+
+  </main>
+
+  <script src="videojuegos.js"></script>
+</body>
+</html>

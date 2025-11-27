@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(180deg, #0b132b, #1c2541);
+  color: #00ffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Navbar igual que en menu.css */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  border-bottom: 2px solid rgba(0, 255, 255, 0.4);
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li a {
+  color: #00ffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar li a.active {
+  color: #fff;
+  text-shadow: 0 0 10px #00ffff;
+  border-bottom: 2px solid #00ffff;
+}
+
+/* Encabezado */
+.header {
+  text-align: center;
+  padding-top: 8rem;
+}
+
+.header h1 {
+  font-size: 3rem;
+  text-shadow: 0 0 15px #00ffff;
+}
+
+.header p {
+  color: #b8f7ff;
+}
+
+/* Barra de herramientas */
+.tools {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.tools input {
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.4);
+  border-radius: 30px;
+  padding: 0.7rem 1.2rem;
+  color: #00ffff;
+  width: 250px;
+  outline: none;
+}
+
+.tools button {
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  border: none;
+  border-radius: 30px;
+  color: black;
+  padding: 0.7rem 1.5rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.tools button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* Panel de filtros */
+#filterPanel {
+  position: fixed;
+  right: 1rem;
+  top: 6rem;
+  width: 250px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  color: #00ffff;
+  transition: transform 0.4s ease;
+  transform: translateX(110%);
+  z-index: 15;
+}
+
+#filterPanel.visible {
+  transform: translateX(0%);
+}
+
+#filterPanel h3 {
+  margin-top: 0;
+}
+
+#filterPanel label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+#filterPanel select, #filterPanel input {
+  width: 100%;
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 6px;
+  color: #00ffff;
+  padding: 0.4rem;
+  outline: none;
+}
+
+#applyFilters {
+  margin-top: 1rem;
+  background: #00ffff;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* Tarjetas de videojuegos */
+#gamesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem 3rem;
+}
+
+.game-card {
+  background: rgba(0, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  transition: 0.4s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+}
+
+.game-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.4);
+}
+
+.game-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.game-card h3 {
+  color: #00ffff;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.game-card p {
+  color: #b8f7ff;
+  font-size: 0.9rem;
+}
